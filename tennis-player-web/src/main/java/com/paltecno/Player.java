@@ -1,4 +1,4 @@
-package jee;
+package com.paltecno;
 
 import java.util.Date;
 

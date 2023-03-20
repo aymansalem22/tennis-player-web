@@ -1,4 +1,4 @@
-package jee;
+package com.paltecno;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,14 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 /**
  * Servlet implementation class PlayerServlet
  * http://localhost:8080/tennis-player-web/player.do
  */
-@WebServlet(name = "tennis-player-web", urlPatterns = { "/player.do", "/" }) // @WebServlet({"/player.do", ""})
+//@WebServlet(name = "tennis-player-web", urlPatterns = { "/player.do", "/" }) 
 public class PlayerServlet extends HttpServlet {
-
-	private PlayerService service = new PlayerService();
+	
+	@Autowired
+	PlayerService service;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,5 +43,7 @@ public class PlayerServlet extends HttpServlet {
 		request.setAttribute("titles", player.getTitles());
 		request.getRequestDispatcher("/WEB-INF/views/info.jsp").forward(request, response);
 	}
+	
+
 
 }

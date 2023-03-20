@@ -1,9 +1,12 @@
-package jee;
+package com.paltecno;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class PlayerService {
 
 	private List<Player> players = Arrays.asList(
