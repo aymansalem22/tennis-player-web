@@ -1,7 +1,7 @@
 package com.paltecno;
 
 import java.util.Date;
-
+//
 public class Player {
 	private int id;
     private String name;
