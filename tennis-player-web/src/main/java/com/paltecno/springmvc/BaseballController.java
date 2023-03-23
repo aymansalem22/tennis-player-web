@@ -12,27 +12,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/player")
-public class AthleteController {
+@RequestMapping("/baseball")
+public class BaseballController {
 	
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		StringTrimmerEditor editor=new StringTrimmerEditor(true);
-		binder.registerCustomEditor(String.class, editor);
-	}
-	@RequestMapping("/showPlayerForm")
+
+	
+	@RequestMapping("/showStatsForm")
 	public String showForm(Model model) {
-		model.addAttribute("athlete",new Athlete());
-		return "add-player-form";
+		model.addAttribute("ballStats",new BaseballPlayer());
+		return "head-to-head-ball";
 	}
 	
-	@RequestMapping("/processPlayerForm")
-	public static String processForm(@Valid @ModelAttribute("athlete") Athlete myAthlete,BindingResult result) {
+	
+	@RequestMapping("/processStatsForms")
+	public String processForm(@Valid @ModelAttribute("ballStats") BaseballPlayer ballStats,BindingResult result) {
 		if(result.hasErrors()) 
-			return "add-player-form";
-		
+			return "head-to-head-ball";
 		else
-		return "player-confirmation";
+			return "stats-ball-confirmation";
+		
 	}
 
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Servlet implementation class PlayerServlet
- * http://localhost:8080/tennis-player-web/player.do
+ * http://localhost:8080/player.do
  */
 //@WebServlet(name = "tennis-player-web", urlPatterns = { "/player.do", "/" }) 
 public class PlayerServlet extends HttpServlet {

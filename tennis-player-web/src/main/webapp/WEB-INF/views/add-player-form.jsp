@@ -54,6 +54,13 @@
 	    <form:errors path= "rank" cssClass="error"/>
 	    
 	    <br><br>
+	    Last Won (dd-mm-yyyy):<form:input path="lastWon"/>
+        <form:errors path="lastWon" cssClass="error" />
+	     <br><br>
+	     Prize Money(USD):<form:input path="prizeMoney" placeholder="$#,###,###"/>
+	     <form:errors path="prizeMoney" cssClass="error" />
+	    
+	    <br><br>
 		<input type ="submit" value = "Add Player"/>
 
 	</form:form>
